@@ -35,8 +35,11 @@ class Fraction {
     }
 
     // TODO  subtract()
-    public Fraction subtract(int n, int d){
-
+    public Fraction subtract(Fraction other){
+    int n = this.numerator*other.denominator - this.denominator*other.denominator;
+    int d = this.denominator* other.denominator;
+    Fraction result = new Fraction(n,d);
+    return result;
 }
     // TODO multiply()
 
