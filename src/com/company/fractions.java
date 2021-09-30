@@ -11,7 +11,11 @@ class Fraction {
         denominator = d;
     }
 
-    //TODO default constructor (no arguments)
+    public Fraction(){
+
+        numerator = 1;
+        denominator = 2;
+    }
 
     public int getNum()
     {
@@ -31,10 +35,15 @@ class Fraction {
     }
 
     // TODO  subtract()
+    public Fraction subtract(int n, int d){
 
+}
     // TODO multiply()
 
-    // TODO toString()
+   public String toString(){
+        String s = numerator + "/" +denominator;
+        return s;
+   }
 
     // TODO reciprocal()
 
