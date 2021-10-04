@@ -1,11 +1,11 @@
 package com.company;
 
 class Fraction {
-    private int numerator;		//attributes
+    private int numerator;    //attributes
     private int denominator;
 
     // constructor
-    public Fraction(int n, int d)	// constructor
+    public Fraction(int n, int d)  // constructor
     {
         numerator = n;
         denominator = d;
@@ -29,48 +29,62 @@ class Fraction {
     {
         int n = this.numerator*other.denominator + this.denominator*other.numerator;
         int d = this.denominator * other.getDenom();
-
         Fraction result = new Fraction(n,d);
         return result;
     }
 
     // TODO  subtract()
     public Fraction subtract(Fraction other){
-    int n = this.numerator*other.denominator - this.denominator*other.denominator;
-    int d = this.denominator* other.denominator;
-    Fraction result = new Fraction(n,d);
-    return result;
-}
+        int n = this.numerator*other.denominator - this.denominator*other.numerator;
+        int d = this.denominator* other.denominator;
+        Fraction result = new Fraction(n,d);
+        return result;
+    }
     // TODO multiply()
+    public Fraction multiply(Fraction other){
+        int n = this.numerator* this.denominator;
+        int d = this.denominator* other.denominator;
+        Fraction result = new Fraction(n,d);
+        return result;
+    }
 
-   public String toString(){
+    public String toString(){
         String s = numerator + "/" +denominator;
         return s;
-   }
+    }
 
     // TODO reciprocal()
+    public Fraction reciprocal(){
+        int n = denominator;
+        int d = numerator;
+        Fraction result = new Fraction(n,d);
+        return result;
+    }
 
 
     public static void main(String[] args) {
-        Fraction f1 = new Fraction(3,4);	// create an instance of fraction
+        Fraction f1 = new Fraction(3,4);   // create an instance of fraction
         Fraction f2 = new Fraction(4,5);
+        Fraction g2 = new Fraction(4,6);   // create an instance of fraction
+        Fraction g1 = new Fraction(7,8);
 
-        Fraction f3 = f1.add(f2);			// add 2 fractions
-        System.out.println("3/4 + 4/5 = " + f3);	// print the answer
+        Fraction f3 = f1.add(f2);
+        Fraction f4 = f1.subtract(f2); // add 2 fractions
+        Fraction f5 = f1.multiply(f2);
+        Fraction f6 = f1.reciprocal();
+        System.out.println("3/4 + 4/5 = " + f3);
+        System.out.println("3/4 - 4/5= "+ f4);// print the answer
+        System.out.println("3/4 x 4/5= "+ f5);
+        System.out.println("the reciprocal of 3/4 is "+f6);
 
-		/*
-		Fraction f4 = f1.subtract(f2);
-		System.out.println(f1 + " - " + f2 + " = " + f4);
-
-		Add code to multiply f1 and f2 here
-
-		Add code to call reciprocal here
-
-		create 2 new fractions and add them here.
-
-		*/
-
-
+        Fraction g3 = g1.add(g2);
+        Fraction g4 = g1.subtract(g2);
+        Fraction g5 = g1.multiply(g2);
+        Fraction g6 = g1.reciprocal();
+        System.out.println("7/8 + 4/6 = " + g3);
+        System.out.println("7/8 - 4/6= "+ g4);// print the answer
+        System.out.println("7/8 x 4/6= "+ g5);
+        System.out.println("the reciprocal of 7/8 is "+g6);
     }
 
 }
