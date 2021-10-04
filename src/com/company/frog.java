@@ -38,10 +38,20 @@ class Frog {
         yPos=yPos+1;
     }
     //TODO jump method move up and to the right
+    public void jump(int b){
+        int x = xPos+b;
+        int y = yPos+b;
+        this.setPos(x,y);
+    }
     //This method should take an integer argument.  This argument controls how many spaces
     // the frog will move both up and right.  Returns no value.
 
     //TODO visit method moves frog to the location of the friend frog
+    public void visit(Frog r){
+        int x = r.getXPos();
+        int y = r.getYPos();
+        this.setPos(x,y);
+    }
     // This method will take an argument of type Frog.  It will find the position of the
     // frog and move to this position.  Returns no value.
 
@@ -66,12 +76,19 @@ class Frog {
         Frog f2 = new Frog("Francine", -2,0);
         f2.eatFly();
         // TODO uncomment these to test new code.
-        //f2.jump(2);
-        //f1.visit(f2);
-        System.out.println(f1);
+        f2.jump(2);
         System.out.println(f2);
+        f1.visit(f2);
+        System.out.println(f1);
 
-        // make a new frog named Frank.  have him jump twice and then go visit Freddy.
+        // make a new frog named Frank.  have him jump twice and then go visit Freddy
+        Frog f3 = new Frog("frank", 3, 4);
+        f3.jump(3);
+        System.out.println(f3);
+        f3.jump(4);
+        System.out.println(f3);
+        f3.visit(f1);
+        System.out.println(f3);
 
     }
 
@@ -83,6 +100,10 @@ Yum
 Hi I am Freddy the frog and I live at 3 5
 Francine
 Yum
-Hi I am Freddy the frog and I live at 0 2
 Hi I am Francine the frog and I live at 0 2
+Hi I am Freddy the frog and I live at 0 2
+frank
+Hi I am frank the frog and I live at 6 7
+Hi I am frank the frog and I live at 10 11
+Hi I am frank the frog and I live at 0 2
 */

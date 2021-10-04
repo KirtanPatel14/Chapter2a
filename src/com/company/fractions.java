@@ -89,3 +89,13 @@ class Fraction {
 
 }
 
+/*  Output
+3/4 + 4/5 = 31/20
+3/4 - 4/5= -1/20
+3/4 x 4/5= 12/20
+the reciprocal of 3/4 is 4/3
+7/8 + 4/6 = 74/48
+7/8 - 4/6= 10/48
+7/8 x 4/6= 56/48
+the reciprocal of 7/8 is 8/7
+*/
